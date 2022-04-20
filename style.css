@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+
+:root{
+    --veryDarkBlue: hsl(233, 47%, 7%);
+    --darkDesatBlue: hsl(244, 38%, 16%);
+    --softViolet: hsl(277, 64%, 61%);
+
+    --white: hsl(0, 0%, 100%);
+    --whiteMain: hsla(0, 0%, 100%, 0.75);
+    --whiteStat:  hsla(0, 0%, 100%, 0.6);
+}
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  * {
+    margin: 0;
+  }
+  html, body {
+    height: 100%;
+  }
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+
+  }
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  input, button, textarea, select {
+    font: inherit;
+  }
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  #root, #__next {
+    isolation: isolate;
+  }
+
+/* My styles */
+
+body{
+    font-size: 15px;
+    background: var(--veryDarkBlue);
+    color: var(--whiteMain);
+}
+
+.wrapper{
+  width: 100vw
+}
+
+#card{
+    margin: 0 auto;
+    background: var(--darkDesatBlue);
+    border-radius: 8px;
+}
+
+.imgContainer{
+    background: var(--softViolet);
+}
+
+img{
+    mix-blend-mode: multiply;
+}
+
+.contentContainer > h1{
+    font-size: 2.25rem;
+    line-height: 1.25;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    color: var(--white);
+}
+
+.contentContainer > h1 > span{
+    color: var(--softViolet);
+}
+
+.contentContainer > p {
+    margin-top: 24px;
+    font-weight: 400;
+    color: var(--whiteMain);
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+.stat > div{
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+}
+
+.m{
+    text-transform: uppercase;
+}
+
+.stat > p{
+    color: var(--whiteStat);
+    font-family: 'Lexend Deca', sans-serif;
+    text-transform: uppercase;
+}
+
+/*Media*/
+/*Desktop*/
+@media screen and (min-width: 769px) {
+
+
+  main{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #card{
+    width: 1110px;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .imgContainer{
+    width: 540px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  } 
+
+  .img{
+    content: url("./images/image-header-desktop.jpg");
+  }
+
+  .contentContainer{
+    width: 570px;
+    padding: 70px 120px 70px 70px;  }
+
+  #stats{
+    margin-top: 66px;
+    display: flex;
+    flex-direction: row;
+    gap: 55px;
+  }
+}
+
+/*Mobile*/
+@media screen and (max-width: 768px) {
+  .wrapper{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .imgContainer{
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+
+  .img{
+    content: url("./images/image-header-mobile.jpg")
+  }
+  .contentContainer{
+    padding: 40px 24px;
+  }
+
+  #card{
+    width: 327px;
+    margin: 80px auto;
+  }
+
+  .stat{
+    margin-top: 24px;
+  }
+}
+
